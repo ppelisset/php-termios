@@ -1,0 +1,20 @@
+{
+  "name": "ppelisset/termios",
+  "description": "Port of Unix Termios API with PHP FFI",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pierre Pélisset",
+      "email": "ppelisset@hotmail.fr"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-ffi": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Termios\\": "src/"
+    }
+  }
+}
