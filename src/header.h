@@ -18,3 +18,6 @@ speed_t cfgetospeed(const struct termios *);
 int     cfsetispeed(struct termios *, speed_t);
 int     cfsetospeed(struct termios *, speed_t);
 int     tcflush(int fd, int queue_selector);
+
+int errno;
+char * strerror(int errCode);

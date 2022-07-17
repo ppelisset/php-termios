@@ -16,5 +16,18 @@
     "psr-4": {
       "Termios\\": "src/"
     }
+  },
+  "require-dev": {
+    "pestphp/pest": "1.21.3",
+    "ppelisset/fileno": "^0.2.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "cweagans/composer-patches": true
+    }
+  },
+  "extra": {
+    "enable-patching": true
   }
 }

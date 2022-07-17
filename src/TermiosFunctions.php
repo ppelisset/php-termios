@@ -7,7 +7,6 @@ use Termios\PlatformSpecific\PlatformSpecific;
 
 final class TermiosFunctions
 {
-    private const HEADER_DIRECTORY = __DIR__ . "/header/";
     private static ?FFI $ffi = null;
 
     public static function tcgetattr(int $fd): Termios
@@ -27,7 +26,9 @@ final class TermiosFunctions
         $termiosCData = $ffi->new("struct termios");
         $termios->raw($termiosCData);
         if ($ffi->tcsetattr($fd, $optionalAction->value, FFI::addr($termiosCData)) !== 0) {
-            throw new \RuntimeException("Error during tcsetattr");
+            $errorCode = $ffi->errno;
+            $error = FFI::string($ffi->strerror($errorCode));
+            throw new RuntimeException($error, $errorCode);
         }
         $ffi->cfsetispeed(FFI::addr($termiosCData), $termios->ispeed);
         $ffi->cfsetospeed(FFI::addr($termiosCData), $termios->ospeed);
