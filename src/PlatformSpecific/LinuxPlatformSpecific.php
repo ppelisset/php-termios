@@ -116,4 +116,12 @@ final class PlatformSpecific extends BasePlatformSpecific
     public const TCIFLUSH = 0x00000000;
     public const TCOFLUSH = 0x00000001;
     public const TCIOFLUSH = 0x00000002;
+
+    public function getCustomStructMembers(): array
+    {
+        return [
+            "speed_t c_ispeed",
+            "speed_t c_ospeed"
+        ];
+    }
 }
