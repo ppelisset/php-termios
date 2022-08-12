@@ -75,6 +75,7 @@ final class PlatformSpecific extends BasePlatformSpecific
     public const PARODD = 0x00000200;
     public const HUPCL = 0x00000400;
     public const CLOCAL = 0x00000800;
+    public const CMSPAR = 0x40000000;
     public const CRTSCTS = 0x80000000;
     public const ECHOKE = 0x00000800;
     public const ECHOE = 0x00000010;

@@ -84,6 +84,7 @@ abstract class BasePlatformSpecific
     public const CLOCAL = 0;
     public const CCTS_OFLOW = 0;
     public const CRTSCTS = 0;
+    public const CMSPAR = 0;
     public const CRTS_IFLOW = 0;
     public const CDTR_IFLOW = 0;
     public const CDSR_OFLOW = 0;

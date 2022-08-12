@@ -87,6 +87,7 @@ final class Termios
     public const HUPCL = PlatformSpecific::HUPCL;
     public const CLOCAL = PlatformSpecific::CLOCAL;
     public const CCTS_OFLOW = PlatformSpecific::CCTS_OFLOW;
+    public const CMSPAR = PlatformSpecific::CMSPAR;
     public const CRTSCTS = PlatformSpecific::CRTSCTS;
     public const CRTS_IFLOW = PlatformSpecific::CRTS_IFLOW;
     public const CDTR_IFLOW = PlatformSpecific::CDTR_IFLOW;
