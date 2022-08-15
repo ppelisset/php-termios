@@ -25,13 +25,13 @@ final class TermiosFunctions
         $ffi = self::getFFI();
         $termiosCData = $ffi->new("struct termios");
         $termios->raw($termiosCData);
+        $ffi->cfsetispeed(FFI::addr($termiosCData), $termios->ispeed);
+        $ffi->cfsetospeed(FFI::addr($termiosCData), $termios->ospeed);
         if ($ffi->tcsetattr($fd, $optionalAction->value, FFI::addr($termiosCData)) !== 0) {
             $errorCode = $ffi->errno;
             $error = FFI::string($ffi->strerror($errorCode));
             throw new RuntimeException($error, $errorCode);
         }
-        $ffi->cfsetispeed(FFI::addr($termiosCData), $termios->ispeed);
-        $ffi->cfsetospeed(FFI::addr($termiosCData), $termios->ospeed);
     }
 
     public static function tcflush(int $fd, QueueSelector $queueSelector): int
